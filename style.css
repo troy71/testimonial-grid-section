@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	color: white;
+	font-family: var(--family-font);
+	overflow: hidden;
+}
+
+:root {
+	--family-font: 'Barlow Semi Condensed', sans-serif;
+	--team-name-size: 0.813rem;
+	--location-name-size: 0.688rem;
+	--mclaren: #ff7f00;
+	--williams: #00a0dc;
+	--ferrari: #ff2800;
+	--mercedes: #04c0c9;
+	--red-bull: #121f45;
+}
+
+.testimonial-grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		'mclaren'
+		'williams'
+		'ferrari'
+		'mercedes'
+		'red-bull';
+
+	padding-block: 2rem;
+	width: min(95%, 70rem);
+	margin-inline: auto;
+}
+
+.testimonial {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 2rem;
+	border-radius: 0.5rem;
+
+}
+
+.testimonial:nth-child(1) {
+	grid-area: mclaren;
+}
+
+.testimonial:nth-child(2) {
+	grid-area: williams;
+}
+
+.testimonial:nth-child(3) {
+	grid-area: ferrari;
+}
+
+.testimonial:nth-child(4) {
+	grid-area: mercedes;
+}
+
+.testimonial:nth-child(5) {
+	grid-area: red-bull;
+}
+
+
+
+@media screen and (max-width: 767px) {
+	.testimonial-grid {
+		grid-template-areas:
+			'mclaren'
+			'williams'
+			'ferrari'
+			'mercedes'
+			'red-bull';
+	}
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+	.testimonial-grid {
+		grid-template-areas:
+			'mclaren mclaren'
+			'williams ferrari'
+			'mercedes mercedes'
+			'red-bull red-bull';
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.testimonial-grid {
+		grid-template-areas:
+			'mclaren mclaren williams red-bull'
+			'ferrari mercedes mercedes red-bull';
+	}
+}
+
+.logo {
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+}
+
+.teams {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	gap: 16px;
+}
+
+h2 {
+	font-size: var(--team-name-size);
+}
+
+.location {
+	font-size: var(--location-name-size);
+}
+
+.text {
+	font-size: var(--team-name-size);
+	margin-top: 16px;
+}
+
+.flag {
+	width: 32px;
+	margin-bottom: 8px;
+}
+
+.drivers {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	text-align: center;
+	margin-top: 16px;
+	font-size: var(--team-name-size);
+}
+
+.mclaren-logo {
+	border: 2px solid var(--mclaren);
+}
+
+.mclaren {
+	background-image: url(./images/mclaren-img.jpg);
+	border: 2px solid var(--mclaren);
+	border-radius: 8px;
+}
+
+.williams-logo {
+	border: 2px solid var(--williams);
+}
+
+.williams {
+	background-image: url(./images/williams-img.png);
+	border: 2px solid var(--williams);
+	border-radius: 8px;
+}
+
+.ferrari-logo {
+	border: 2px solid var(--ferrari);
+}
+
+.ferrari {
+	background-image: url(./images/ferrari-img.png);
+	border: 2px solid var(--ferrari);
+	border-radius: 8px;
+}
+
+.mercedes-logo {
+	border: 2px solid var(--mercedes);
+}
+
+.mercedes {
+	background-image: url(./images/mercedes-img.png);
+	border: 2px solid var(--mercedes);
+	border-radius: 8px;
+}
+
+.red-bull-logo {
+	border: 2px solid var(--red-bull);
+}
+
+.red-bull {
+	background-image: url(./images/red-bull-image.png);
+	border: 2px solid var(--red-bull);
+	border-radius: 8px;
+}
